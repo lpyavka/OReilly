@@ -14,6 +14,7 @@ public class readFileMain {
     public static final String SPACE = "\\s+";
 
     public static void main(String[] args) throws IOException {
+        System.out.println("hello");
         BufferedReader bufferedReader = new BufferedReader(new FileReader("D:\\workspace\\bionic\\Shevchenko.txt"));
         String line;
         Map<String, Integer> map = new HashMap();
