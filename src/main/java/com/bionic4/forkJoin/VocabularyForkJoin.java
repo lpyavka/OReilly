@@ -37,13 +37,13 @@ public class VocabularyForkJoin extends RecursiveAction {
             for (File file : files) {
                 VocabularyForkJoin vocabularyForkJoin = new VocabularyForkJoin(file, result);
                 vocabularyForkJoins.add(vocabularyForkJoin);
+                vocabularyForkJoin.fork();
             }
             for (VocabularyForkJoin vocabularyForkJoin : vocabularyForkJoins) {
-                vocabularyForkJoin.fork();
+               vocabularyForkJoin.join();
             }
         }
     }
-
 
     protected void calculateCurrentFile(File fileName, Map<String, Integer> result) throws IOException {
         String line;
