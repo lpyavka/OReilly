@@ -1,5 +1,6 @@
 package com.bionic4.socket.dao;
 
+import com.bionic4.socket.dao.jdbc.JPAMessageDao;
 import com.bionic4.socket.dao.jdbc.JdbcMessageDao;
 import com.bionic4.socket.dto.Message;
 
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public class JdbcMain {
     public static void main(String[] args) {
-        MessageDao messageDao = new JdbcMessageDao();
+        MessageDao messageDao = new JPAMessageDao();
         List<Message> messages = messageDao.getMessages();
         print(messages);
         messageDao.addMessage(new Message(3, "Zikf", "Stupidors", new Date()));
